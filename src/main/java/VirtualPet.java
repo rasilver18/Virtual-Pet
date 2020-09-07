@@ -12,20 +12,17 @@ public class VirtualPet {
     private String petColor;
 
 
-
-
-
-    public VirtualPet (String petName, String petSpecies, String petColor, int hungerLevel, int socialLevel, int comfortLevel, int energyLevel, int funLevel, int bathroomLevel){
-    this.petName = petName;
-    this.petSpecies = petSpecies;
-    this.petColor = petColor;
-    this.hungerLevel = hungerLevel;
-    this.socialLevel = socialLevel;
-    this.comfortLevel = comfortLevel;
-    this.energyLevel = energyLevel;
-    this.funLevel = funLevel;
-    this.bathroomLevel = bathroomLevel;
-}
+    public VirtualPet(String petName, String petSpecies, String petColor, int hungerLevel, int socialLevel, int comfortLevel, int energyLevel, int funLevel, int bathroomLevel) {
+        this.petName = petName;
+        this.petSpecies = petSpecies;
+        this.petColor = petColor;
+        this.hungerLevel = hungerLevel;
+        this.socialLevel = socialLevel;
+        this.comfortLevel = comfortLevel;
+        this.energyLevel = energyLevel;
+        this.funLevel = funLevel;
+        this.bathroomLevel = bathroomLevel;
+    }
 
     public VirtualPet() {
 
@@ -36,8 +33,8 @@ public class VirtualPet {
     }
 
     public void feed() {
-        hungerLevel --;
-        bathroomLevel ++;
+        hungerLevel--;
+        bathroomLevel++;
 
     }
 
@@ -47,25 +44,26 @@ public class VirtualPet {
 
 
     }
-    public int getComfort(){
+
+    public int getComfort() {
         return comfortLevel;
     }
 
-    public int getFun(){
+    public int getFun() {
         return funLevel;
     }
 
     public void play() {
-        funLevel --;
-        socialLevel --;
-        energyLevel ++;
-        hungerLevel ++;
-        comfortLevel ++;
+        funLevel--;
+        socialLevel--;
+        energyLevel++;
+        hungerLevel++;
+        comfortLevel++;
     }
 
     public void snuggle() {
-        socialLevel --;
-        comfortLevel --;
+        socialLevel--;
+        comfortLevel--;
     }
 
 
@@ -74,8 +72,8 @@ public class VirtualPet {
     }
 
     public void pottyTime() {
-        bathroomLevel --;
-        comfortLevel --;
+        bathroomLevel--;
+        comfortLevel--;
     }
 
 
@@ -84,60 +82,55 @@ public class VirtualPet {
     }
 
     public void sleep() {
-        energyLevel --;
-        comfortLevel --;
-        socialLevel ++;
-        funLevel ++;
-        bathroomLevel ++;
-        hungerLevel ++;
+        energyLevel--;
+        comfortLevel--;
+        socialLevel++;
+        funLevel++;
+        bathroomLevel++;
+        hungerLevel++;
     }
+
     public void tick() {
         checkHunger();
         checkEnergy();
         checkBathroom();
         socialLevel++;
         funLevel++;
-        comfortLevel ++;
-        energyLevel ++;
+        comfortLevel++;
+        energyLevel++;
     }
 
-    private void checkHunger(){
-        if(hungerLevel ==30){
+    private void checkHunger() {
+        if (hungerLevel == 30) {
             System.out.println("You let me starve. :'( ");
             System.exit(0);
         }
     }
-    private void checkEnergy(){
-        if(energyLevel ==20){
+
+    private void checkEnergy() {
+        if (energyLevel == 20) {
             System.out.println("I am experiencing sleep deprivation. System has crashed. Goodbye");
             System.exit(0);
         }
     }
-    private void checkBathroom(){
-        if(bathroomLevel ==25){
+
+    private void checkBathroom() {
+        if (bathroomLevel == 25) {
             System.out.println("There is too much poop!!!");
             System.exit(0);
         }
     }
 
-    public String getName() {return petName;
+    public String getName() {
+        return petName;
     }
 
-    public String getSpecies() { return petSpecies;
+    public String getSpecies() {
+        return petSpecies;
     }
 
-    public String getColor() { return petColor;
+    public String getColor() {
+        return petColor;
     }
 
-//    @Override
-//    public String toString() {
-//        return "VirtualPet{" +
-//                "hunger=" + hunger +
-//                ", social=" + social +
-//                ", comfort=" + comfort +
-//                ", energy=" + energy +
-//                ", fun=" + fun +
-//                ", bathroom=" + bathroom +
-//                '}';
-//    }
 }

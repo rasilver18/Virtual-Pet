@@ -46,7 +46,7 @@ class VirtualPetApp {
 
         }
         System.out.println(resetColor + "What would you like to do with your pet?");
-        System.out.println("p.s. keep my stats low to keep my happy and healthy!");
+        System.out.println("p.s. keep my levels low to keep me happy and healthy!");
         printMenu();
 
 
